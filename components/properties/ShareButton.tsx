@@ -1,11 +1,11 @@
-'use client';
+"use client";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover';
-import { Button } from '../ui/button';
-import { LuShare2 } from 'react-icons/lu';
+} from "@/components/ui/popover";
+import { Button } from "../ui/button";
+import { LuShare2 } from "react-icons/lu";
 
 import {
   TwitterShareButton,
@@ -14,7 +14,7 @@ import {
   TwitterIcon,
   EmailIcon,
   LinkedinIcon,
-} from 'react-share';
+} from "react-share";
 
 function ShareButton({
   propertyId,
@@ -28,15 +28,16 @@ function ShareButton({
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant='outline' size='icon' className='p-2'>
+        <Button variant="outline" size="icon" className="p-2">
           <LuShare2 />
         </Button>
       </PopoverTrigger>
+
       <PopoverContent
-        side='top'
-        align='end'
+        side="top"
+        align="end"
         sideOffset={10}
-        className='flex items-center gap-x-2 justify-center w-full'
+        className="flex items-center gap-x-2 justify-center w-full"
       >
         <TwitterShareButton url={shareLink} title={name}>
           <TwitterIcon size={32} round />

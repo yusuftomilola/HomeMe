@@ -1,7 +1,7 @@
-'use client';
-import { useState } from 'react';
-import { amenities, Amenity } from '@/utils/amenities';
-import { Checkbox } from '@/components/ui/checkbox';
+"use client";
+import { useState } from "react";
+import { amenities, Amenity } from "@/utils/amenities";
+import { Checkbox } from "@/components/ui/checkbox";
 
 function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
   const amenitiesWithIcons = defaultValue?.map(({ name, selected }) => ({
@@ -26,14 +26,15 @@ function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
   return (
     <section>
       <input
-        type='hidden'
-        name='amenities'
+        type="hidden"
+        name="amenities"
         value={JSON.stringify(selectedAmenities)}
       />
-      <div className='grid grid-cols-2 gap-4'>
+
+      <div className="grid grid-cols-2 gap-4">
         {selectedAmenities.map((amenity) => {
           return (
-            <div key={amenity.name} className='flex items-center space-x-2'>
+            <div key={amenity.name} className="flex items-center space-x-2">
               <Checkbox
                 id={amenity.name}
                 checked={amenity.selected}
@@ -41,9 +42,9 @@ function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
               />
               <label
                 htmlFor={amenity.name}
-                className='text-sm font-medium leading-none capitalize flex gap-x-2 items-center'
+                className="text-sm font-medium leading-none capitalize flex gap-x-2 items-center"
               >
-                {amenity.name} <amenity.icon className='w-4 h-4' />
+                {amenity.name} <amenity.icon className="w-4 h-4" />
               </label>
             </div>
           );
@@ -53,3 +54,4 @@ function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
   );
 }
 export default AmenitiesInput;
+5;
